@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <div style="padding-top: 4px; padding-bottom: 4px;">
+            <h1>{{ message.title }}</h1>
+            {{ message.content }}
+
+            <a href="{{ path('blog_show', { slug: message.slug }) }}" style="display: block;">
+                Read more
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

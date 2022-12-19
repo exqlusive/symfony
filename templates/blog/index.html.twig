@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {% if messages|length > 0 %}
+            {% for key, message in messages %}
+                <div style="padding-top: 4px; padding-bottom: 4px;">
+                    <h2>{{ message.title }}</h2>
+                    {{ message.content }}
+
+                    <a href="{{ path('blog_show', { slug: message.slug }) }}" style="display: block;">
+                        Read more
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            {% include 'blog/_blog/no_items_found.html.twig' %}
+        {% endif %}
+    </div>
+
+{% endblock %}
